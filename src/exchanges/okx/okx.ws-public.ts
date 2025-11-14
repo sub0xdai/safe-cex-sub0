@@ -1,5 +1,3 @@
-import flatten from 'lodash/flatten';
-
 import type { OrderBook, OrderBookOrders } from '../../types';
 import { jsonParse } from '../../utils/json-parse';
 import { calcOrderBookTotal, sortOrderBook } from '../../utils/orderbook';
@@ -79,9 +77,10 @@ export class OKXPublicWebsocket extends BaseWebSocket<OKXExchange> {
   };
 
   subscribe = () => {
-    const topics = flatten(Object.values(this.topics));
-    const payload = { op: 'subscribe', args: topics };
-    this.ws?.send?.(JSON.stringify(payload));
+    for (const args of Object.values(this.topics)) {
+      const payload = { op: 'subscribe', args };
+      this.ws?.send?.(JSON.stringify(payload));
+    }
   };
 
   onMessage = ({ data }: MessageEvent) => {
