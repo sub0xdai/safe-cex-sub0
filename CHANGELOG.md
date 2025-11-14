@@ -1,4 +1,4 @@
-## [8.6.6](https://github.com/gmtech-xyz/safe-cex/compare/v8.5.1...v8.6.6) (2025-04-16)
+## [8.6.7](https://github.com/gmtech-xyz/safe-cex/compare/v8.5.1...v8.6.7) (2025-11-14)
 
 
 ### Bug Fixes
@@ -9,6 +9,7 @@
 * **bybit:** remove contract type, and unlimitedXHR ([ab67326](https://github.com/gmtech-xyz/safe-cex/commit/ab67326efdc499ad4b7460e8033c1b31b254264b))
 * **bybit:** support cancel orders legacy account ([58b7358](https://github.com/gmtech-xyz/safe-cex/commit/58b7358fd433d476a48e1f4033a326fb63ef1697))
 * **bybit:** support legacy contract account ([0c241b2](https://github.com/gmtech-xyz/safe-cex/commit/0c241b21894d690ed2f937d4f0fa9c5ac884fe33))
+* **okx:** limit number of args to be sent in a single ws subscribe request ([eb15821](https://github.com/gmtech-xyz/safe-cex/commit/eb15821d2fa0d8dc751a85bb4c18ab019a63c289))
 * **okx:** update urls ([128dd69](https://github.com/gmtech-xyz/safe-cex/commit/128dd69f7f13381d74d678d65423e66ddde1feee))
 * **phemex/orders:** filter out executed orders ([be018c6](https://github.com/gmtech-xyz/safe-cex/commit/be018c6cb27ba6e2c300ffeebf6b405c6ac87660))
 * **phemex:** compute uPNL from all positions ([4128be3](https://github.com/gmtech-xyz/safe-cex/commit/4128be3782f75f4a45e2a3e4e122b7ad22d672d1))
