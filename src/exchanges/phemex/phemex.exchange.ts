@@ -25,7 +25,7 @@ import { BaseExchange } from '../base';
 
 import { createAPI } from './phemex.api';
 import type { PhemexApiResponse } from './phemex.types';
-import { BROKER_ID, ENDPOINTS, INTERVAL, ORDER_TYPE } from './phemex.types';
+import { ENDPOINTS, INTERVAL, ORDER_TYPE } from './phemex.types';
 import { PhemexPrivateWebsocket } from './phemex.ws-private';
 import { PhemexPublicWebsocket } from './phemex.ws-public';
 
@@ -444,7 +444,7 @@ export class PhemexExchange extends BaseExchange {
     const price = opts.price ? adjust(opts.price, pPrice) : undefined;
 
     const req: Record<string, any> = omitUndefined({
-      clOrdID: `${BROKER_ID}_${uuid()}`,
+      clOrdID: uuid(),
       symbol: opts.symbol,
       orderQtyRq: `${amount}`,
       ordType: ORDER_TYPE[opts.type],
@@ -483,7 +483,7 @@ export class PhemexExchange extends BaseExchange {
     const price = adjust(opts.price ?? 0, pPrice);
 
     const req: Record<string, any> = omitUndefined({
-      clOrdID: `${BROKER_ID}_${uuid()}`,
+      clOrdID: uuid(),
       symbol: opts.symbol,
       ordType: ORDER_TYPE[opts.type],
       priceRp: `${price}`,

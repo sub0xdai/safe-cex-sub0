@@ -2,21 +2,20 @@ import type { Timeframe } from '../../types';
 import { OrderSide, OrderStatus, OrderType, PositionSide } from '../../types';
 
 export const RECV_WINDOW = 5000;
-export const BROKER_ID = 'f4f16f76ea9fBCDE';
 
 export const BASE_URL = 'https://www.okx.com';
 export const BASE_WS_URL = {
   public: {
     livenet: 'wss://ws.okx.com:8443/ws/v5/public',
-    testnet: 'wss://ws.okx.com:8443/ws/v5/public?brokerId=9999',
+    testnet: 'wss://wspap.okx.com:8443/ws/v5/public',
   },
   business: {
     livenet: 'wss://ws.okx.com:8443/ws/v5/business',
-    testnet: 'wss://wspap.okx.com:8443/ws/v5/business?brokerId=9999',
+    testnet: 'wss://wspap.okx.com:8443/ws/v5/business',
   },
   private: {
     livenet: 'wss://ws.okx.com:8443/ws/v5/private',
-    testnet: 'wss://ws.okx.com:8443/ws/v5/private?brokerId=9999',
+    testnet: 'wss://wspap.okx.com:8443/ws/v5/private',
   },
 };
 

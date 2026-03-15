@@ -9,11 +9,8 @@ import { virtualClock } from '../../utils/virtual-clock';
 
 import {
   BASE_URL,
-  BROKER_ID,
-  ENDPOINTS,
   PUBLIC_ENDPOINTS,
   RECV_WINDOW,
-  TESTNET_BROKER_ID,
 } from './woo.types';
 
 const signV1 = (config: AxiosRequestConfig, options: ExchangeOptions) => {
@@ -109,19 +106,6 @@ export const createAPI = (options: ExchangeOptions) => {
 
     const nextConfig = { ...config };
     nextConfig.timeout = options?.extra?.recvWindow ?? RECV_WINDOW;
-
-    if (nextConfig.method?.toUpperCase?.() === 'POST') {
-      if (nextConfig.url === ENDPOINTS.PLACE_ORDER) {
-        nextConfig.data.broker_id = options.testnet
-          ? TESTNET_BROKER_ID
-          : BROKER_ID;
-      }
-      if (nextConfig.url === ENDPOINTS.ALGO_ORDER) {
-        nextConfig.data.brokerId = options.testnet
-          ? TESTNET_BROKER_ID
-          : BROKER_ID;
-      }
-    }
 
     // sign v1 endpoints requests
     if (nextConfig.url?.includes('v1')) {

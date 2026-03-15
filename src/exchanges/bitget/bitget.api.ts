@@ -8,7 +8,6 @@ import { virtualClock } from '../../utils/virtual-clock';
 
 import {
   BASE_URL,
-  BROKER_ID,
   PUBLIC_ENDPOINTS,
   RECV_WINDOW,
 } from './bitget.types';
@@ -26,7 +25,6 @@ export const createAPI = (options: ExchangeOptions) => {
     headers: {
       'ACCESS-KEY': options.key,
       'ACCESS-PASSPHRASE': options.passphrase,
-      'X-CHANNEL-API-CODE': BROKER_ID,
       'Content-Type': 'application/json',
     },
   });

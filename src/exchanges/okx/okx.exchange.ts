@@ -30,7 +30,6 @@ import { BaseExchange } from '../base';
 
 import { createAPI } from './okx.api';
 import {
-  BROKER_ID,
   ENDPOINTS,
   INTERVAL,
   ORDER_SIDE,
@@ -765,8 +764,7 @@ export class OKXExchange extends BaseExchange {
     const req: Record<string, any> = omitUndefined({
       instId: market.id,
       tdMode: 'cross',
-      algoClOrdId: `${BROKER_ID}${uuid()}`.slice(0, 32),
-      tag: BROKER_ID,
+      algoClOrdId: uuid().slice(0, 32),
       side: inverseObj(ORDER_SIDE)[opts.side],
       posSide: this.getPositionSide(opts),
       ordType:
@@ -829,8 +827,7 @@ export class OKXExchange extends BaseExchange {
 
     const req = omitUndefined({
       instId: market.id,
-      clOrdId: `${BROKER_ID}${uuid()}`.slice(0, 32),
-      tag: BROKER_ID,
+      clOrdId: uuid().slice(0, 32),
       tdMode: 'cross',
       side: inverseObj(ORDER_SIDE)[opts.side],
       ordType: REVERSE_ORDER_TYPE[opts.type],

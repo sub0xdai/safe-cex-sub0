@@ -8,7 +8,6 @@ import { virtualClock } from '../../utils/virtual-clock';
 
 import {
   BASE_URL,
-  BROKER_ID,
   PUBLIC_ENDPOINTS,
   RECV_WINDOW,
 } from './bybit.types';
@@ -60,7 +59,6 @@ export const createAPI = (options: ExchangeOptions) => {
       'X-BAPI-SIGN': signature,
       'X-BAPI-API-KEY': options.key,
       'X-BAPI-TIMESTAMP': timestamp,
-      'X-Referer': BROKER_ID,
       'X-BAPI-RECV-WINDOW': RECV_WINDOW,
     });
 

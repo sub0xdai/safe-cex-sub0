@@ -7,7 +7,6 @@ export type PhemexApiResponse<T extends Record<string, any>> = T & {
 };
 
 export const RECV_WINDOW = 5000;
-export const BROKER_ID = 'gmtech_trade';
 
 export const BASE_URL = {
   livenet: 'https://api.phemex.com',
