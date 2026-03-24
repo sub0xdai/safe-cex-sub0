@@ -35,7 +35,7 @@ export class BinancePublicWebsocket extends BaseWebSocket<BinanceExchange> {
         BASE_WS_URL.public[this.parent.options.testnet ? 'testnet' : 'livenet']
       );
 
-      this.ws.addEventListener('open', this.onOpen);
+      this.ws.addEventListener('open', this.handleOpen);
       this.ws.addEventListener('message', this.onMessage);
       this.ws.addEventListener('close', this.onClose);
     }

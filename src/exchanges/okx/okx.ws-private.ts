@@ -28,7 +28,7 @@ export class OKXPrivateWebsocket extends BaseWebSocket<OKXExchange> {
   connectAndSubscribe = () => {
     if (!this.isDisposed) {
       this.ws = new WebSocket(this.endpoint);
-      this.ws.addEventListener('open', this.onOpen);
+      this.ws.addEventListener('open', this.handleOpen);
       this.ws.addEventListener('message', this.onMessage);
       this.ws.addEventListener('close', this.onClose);
     }

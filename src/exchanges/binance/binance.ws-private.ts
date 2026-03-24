@@ -24,7 +24,7 @@ export class BinancePrivateWebsocket extends BaseWebSocket<BinanceExchange> {
       this.ws = new WebSocket(url);
       this.ws.addEventListener('message', this.onMessage);
       this.ws.addEventListener('close', this.onClose);
-      this.ws.addEventListener('open', this.onOpen);
+      this.ws.addEventListener('open', this.handleOpen);
     }
   };
 

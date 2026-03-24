@@ -18,7 +18,7 @@ export class GatePrivateWebsocket extends BaseWebSocket<GateExchange> {
         BASE_WS_URL[this.parent.options.testnet ? 'testnet' : 'livenet']
       );
 
-      this.ws.addEventListener('open', this.onOpen);
+      this.ws.addEventListener('open', this.handleOpen);
       this.ws.addEventListener('message', this.onMessage);
       this.ws.addEventListener('close', this.onClose);
     }

@@ -36,7 +36,7 @@ export class PhemexPrivateWebsocket extends BaseWebSocket<PhemexExchange> {
 
       // connect to the websocket
       this.ws = new WebSocket(this.endpoint);
-      this.ws.addEventListener('open', this.onOpen);
+      this.ws.addEventListener('open', this.handleOpen);
       this.ws.addEventListener('message', this.onMessage);
       this.ws.addEventListener('close', this.onClose);
     }

@@ -28,7 +28,7 @@ export class WooPublicWebsocket extends BaseWebSocket<WOOXExchange> {
 
       this.ws = new WebSocket(`${baseURL}${this.parent.options.applicationId}`);
 
-      this.ws.addEventListener('open', this.onOpen);
+      this.ws.addEventListener('open', this.handleOpen);
       this.ws.addEventListener('message', this.onMessage);
       this.ws.addEventListener('close', this.onClose);
     }

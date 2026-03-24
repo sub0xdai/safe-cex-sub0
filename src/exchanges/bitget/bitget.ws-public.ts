@@ -30,7 +30,7 @@ export class BitgetPublicWebsocket extends BaseWebSocket<BitgetExchange> {
       this.topics.ticker = this.parent.store.markets.map((m) => m.symbol);
 
       this.ws = new WebSocket(BASE_WS_URL);
-      this.ws.addEventListener('open', this.onOpen);
+      this.ws.addEventListener('open', this.handleOpen);
       this.ws.addEventListener('message', this.onMessage);
       this.ws.addEventListener('close', this.onClose);
     }
